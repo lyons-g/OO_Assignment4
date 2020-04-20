@@ -1,56 +1,60 @@
 package ie.nuigalway.ie.ct548.assignment4;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+
 
 public class CatalogContainer {
 	
 	
-	private Set<Profile> profiles = new HashSet<Profile>();
-	private Set<People> peoples = new HashSet<People>();
-	private Set<Genre> geners = new HashSet<Genre>();
-	private Set<MediaItem> mediaitems = new HashSet<MediaItem>();
-	private Set<TvSeries> tvseries = new HashSet<TvSeries>();
-	private Set<Film> films = new HashSet<Film>();
+	private ArrayList<Profile> profiles = new ArrayList<Profile>();
+	private ArrayList<Person> people = new ArrayList<Person>();
+	private ArrayList<Genre> genres = new ArrayList<Genre>();
+	private ArrayList<MediaItem> mediaitems = new ArrayList<MediaItem>();
+	private ArrayList<TvSeries> tvseries = new ArrayList<TvSeries>();
+	private ArrayList<Film> films = new ArrayList<Film>();
 	
-	
-	
-	public Set<Profile> getProfiles() {
+	public ArrayList<Profile> getProfiles() {
 		return profiles;
 	}
-	public void setProfiles(Set<Profile> profiles) {
+	public void setProfiles(ArrayList<Profile> profiles) {
 		this.profiles = profiles;
 	}
-	public Set<People> getPeoples() {
-		return peoples;
+	public ArrayList<Person> getPeople() {
+		return people;
 	}
-	public void setPeoples(Set<People> peoples) {
-		this.peoples = peoples;
+	public void setPeople(ArrayList<Person> person) {
+		this.people = person;
 	}
-	public Set<Genre> getGeners() {
-		return geners;
+	public ArrayList<Genre> getGenres() {
+		return genres;
 	}
-	public void setGeners(Set<Genre> geners) {
-		this.geners = geners;
+	public void setGenres(ArrayList<Genre> geners) {
+		this.genres = geners;
 	}
-	public Set<MediaItem> getMediaitems() {
+	public ArrayList<MediaItem> getMediaitems() {
 		return mediaitems;
 	}
-	public void setMediaitems(Set<MediaItem> mediaitems) {
+	public void setMediaitems(ArrayList<MediaItem> mediaitems) {
 		this.mediaitems = mediaitems;
 	}
-	public Set<TvSeries> getTvseries() {
+	public ArrayList<TvSeries> getTvseries() {
 		return tvseries;
 	}
-	public void setTvseries(Set<TvSeries> tvseries) {
+	public void setTvseries(ArrayList<TvSeries> tvseries) {
 		this.tvseries = tvseries;
 	}
-	public Set<Film> getFilms() {
+	public ArrayList<Film> getFilms() {
 		return films;
 	}
-	public void setFilms(Set<Film> films) {
+	public void setFilms(ArrayList<Film> films) {
 		this.films = films;
 	}
+	@Override
+	public String toString() {
+		return "CatalogContainer [profiles=" + getProfiles() + "TvSeries" + getTvseries() + "Films" + getFilms() + "\n" + "Genre" + getGenres() + "\n" + "People" + getPeople();
+	}
+	
+	
 	
 	
 	

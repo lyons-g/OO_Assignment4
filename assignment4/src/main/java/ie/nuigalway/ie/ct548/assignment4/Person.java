@@ -3,16 +3,20 @@ package ie.nuigalway.ie.ct548.assignment4;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "pid", scope = People.class)
-public class People {
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "pid", scope = Person.class)
+public class Person {
 
 	private int pid;
 	private String name; 
 	
+	public Person() {
+		
+	}
 	
-	public People(int pid, String name) {
+	public Person(int pid) {
 		this.pid = pid;
-		this.name = name;
+		this.name = getName();
+		
 	}
 
 
@@ -33,6 +37,11 @@ public class People {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "[pid=" + getPid() + ", name=" + getName() + "]";
 	}
 	
 	

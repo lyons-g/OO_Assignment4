@@ -1,5 +1,7 @@
 package ie.nuigalway.ie.ct548.assignment4;
 
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,14 +11,16 @@ import java.util.Set;
  */
 public abstract class MediaItem {
 
-	private int Id;
-	private People person;
+	//private int Id;
+	//private People person;
 	private String title;
 	private int year;
-	private Set<Genre> genre = new HashSet<Genre>(); 
-	private Set<People> cast = new HashSet<People>();
+	private ArrayList<Genre> genre = new ArrayList<Genre>(); 
+	private ArrayList<Person> cast = new ArrayList<Person>();
 	private String description;
 	
+	
+
 /*	mediaItem(int Id, People person, String title, int year, TreeSet<Genre> genre, TreeSet<People> cast, String description){
 		this.Id = Id;
 		this.person = person;
@@ -29,7 +33,7 @@ public abstract class MediaItem {
 	*/
 	
 	
-	public int getId() {
+	/*public int getId() {
 		return Id;
 	}
 
@@ -46,7 +50,8 @@ public abstract class MediaItem {
 	public void setPerson(People person) {
 		this.person = person;
 	}
-
+*/
+	
 	public String getTitle() {
 		return title;
 	}
@@ -59,16 +64,20 @@ public abstract class MediaItem {
 	public void setYear(int year) {
 		this.year = year;
 	}
-	public Set<Genre> getGenre() {
+	
+	
+	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
-	public void setGenre(Set<Genre> genre) {
+	
+	
+	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
-	public Set<People> getCast() {
+	public ArrayList<Person> getCast() {
 		return cast;
 	}
-	public void setCast(Set<People> cast) {
+	public void setCast(ArrayList<Person> cast) {
 		this.cast = cast;
 	}
 	public String getDescription() {
@@ -78,8 +87,8 @@ public abstract class MediaItem {
 		this.description = description;
 	}
 
-
-	public void TestTitle() {
+}
+	/*public void TestTitle() {
 		System.out.println(getTitle() + " is the title of mediaItem");
 		
 	}
@@ -92,6 +101,6 @@ public abstract class MediaItem {
 	public void TestYear() {
 		System.out.println(getYear() + " is the year of mediaItem");
 	
-
-	}
 }
+	}*/
+

@@ -15,24 +15,48 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class App 
 {
-	static CatalogContainer json;
+	//static CatalogContainer json;
 	
     public static void main( String[] args ) throws JsonParseException, IOException
     {  	
     	
-   ObjectMapper mapper = new ObjectMapper();
-       HashSet<Film> films = new HashSet<Film>();
+    	Profile m = new Profile();
+    	ProfileSelectionView v = new ProfileSelectionView("Profile Selection");
+    	ProfileController c = new ProfileController(m, v);
+    
     	
-       try {
-    	   json = mapper.readValue(new File ("data.json"), CatalogContainer.class);
+   CatalogContainer cc = new CatalogContainer();
+   ObjectMapper mapper = new ObjectMapper();
+   
+   try { cc = mapper.readValue(new File ("data.json"), CatalogContainer.class);
+   
+   }
+   catch(JsonParseException e) {
+	   e.printStackTrace();
+   }catch(JsonMappingException e) {
+	   e.printStackTrace();
+   }catch(Exception e) {
+	   e.printStackTrace();
+   }
+    	
+    System.out.println(cc);
+    }
+}
+      
+      
+      
+      /*   
+      try {
+    	   cc = mapper.readValue(new File ("data.json"), CatalogContainer.class);
     	   
        } catch(JsonMappingException e) {
     	   e.printStackTrace();
        }
+       System.out.println(mapper.writeValueAsString(cc));
     }
 }
     
-/*    
+    
     	MediaItemFactory mediaFactory = new MediaItemFactory();
     	
     	MediaItem theMedia = null;
