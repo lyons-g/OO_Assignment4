@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "tid", scope = TvSeries.class)
-public class TvSeries extends MediaItem {
+public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 
 	private int tid;
 	private Person creator;
@@ -54,8 +54,13 @@ public class TvSeries extends MediaItem {
 		tid = tID;
 	}
 
-	
-
+	/*public int compareTo(TvSeries other) {
+		int yearMatch = this.getYear().compareTo(other.getYear());
+		if(yearMatch == 0)
+			return this.getTitle().compareTo(other.getTitle());
+		return yearMatch;
+	}
+*/
 	@Override
 	public String toString() {
 		return "\n" + "TvSeries [tid=" + tid + ", creator=" + getCreator() + ", title= " + getTitle() + ", year= " + getYear() + ", genre= " + getGenre() + "Cast= " + getCast() + "Description= " + getDescription();

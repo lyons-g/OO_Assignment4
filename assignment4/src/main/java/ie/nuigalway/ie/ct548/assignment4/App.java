@@ -2,6 +2,7 @@ package ie.nuigalway.ie.ct548.assignment4;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -14,17 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 public class App 
-{
-	//static CatalogContainer json;
-	
+{	
     public static void main( String[] args ) throws JsonParseException, IOException
     {  	
-    	
-    	Profile m = new Profile();
-    	ProfileSelectionView v = new ProfileSelectionView("Profile Selection");
-    	ProfileController c = new ProfileController(m, v);
-    
-    	
+    	    	
    CatalogContainer cc = new CatalogContainer();
    ObjectMapper mapper = new ObjectMapper();
    
@@ -39,8 +33,29 @@ public class App
 	   e.printStackTrace();
    }
     	
-    System.out.println(cc);
+    //System.out.println(cc);
+    
+   // System.out.println(cc.getProfiles().toString());
+    
+   // System.out.println(cc.getMediaitems().toString());
+     
+    for(Profile e : cc.getProfiles())
+    	System.out.println(e.getName());
+    	
+   
+    
+   /* CatalogContainer model  = cc;
+    ProfileSelectionView view = new ProfileSelectionView();
+    CCController controller = new CCController(model, view);
+    controller.updateView();
+     
+    /* ListByYearView view = new ListByYearView(); 
+     ListByYearController controller = new ListByYearController(model, view);
+     controller.updateView();
+     */
     }
+    
+ 
 }
       
       

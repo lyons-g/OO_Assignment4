@@ -5,11 +5,44 @@ import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class ProfileSelectionView {
+public class ProfileSelectionView{// extends JFrame {
 
+/*	private JTextField firstProfile = new JTextField(10);
+	private JTextField secondProfile = new JTextField(10);
+	
+	ProfileSelectionView(){
+		JPanel profilePanel = new JPanel();
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setSize(600, 200);
+		
+		profilePanel.add(firstProfile);
+		profilePanel.add(secondProfile);
+		this.add(profilePanel);
+	}
+	
+	public void setFirstProfile(String Name1) {
+		firstProfile.setText(Name1);
+	}
+	
+	public void setSecondProfile(String Name2) {
+		firstProfile.setText(Name2);
+	}
+}*/
+	
+	
+	public void printProfile(String name) {
+		System.out.println(name);
+	}
+	
+}
+
+
+
+	/*
 	// View uses Swing framework to display UI to user
 	 private JFrame frame;
 	 private JButton Profile1Button;
@@ -75,4 +108,4 @@ public class ProfileSelectionView {
 		  
 }
 	 
-	 
+	 */

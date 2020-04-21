@@ -14,7 +14,6 @@ public class Profile {
 		this.preferredGenre = preferredGenre;
 	}
 	
-
 	public String getName() {
 		return name;
 	}

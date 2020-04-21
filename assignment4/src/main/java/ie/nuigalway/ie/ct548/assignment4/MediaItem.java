@@ -1,25 +1,68 @@
 package ie.nuigalway.ie.ct548.assignment4;
 
 import java.awt.List;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 
 /*
  * abstract as do not want to create an instance of mediaItem 
  */
-public abstract class MediaItem {
+public abstract class MediaItem implements Comparable<MediaItem>{
 
-	//private int Id;
-	//private People person;
 	private String title;
-	private int year;
-	private ArrayList<Genre> genre = new ArrayList<Genre>(); 
-	private ArrayList<Person> cast = new ArrayList<Person>();
+	private Year year;
+	private Set<Genre> genre = new TreeSet<Genre>(); 
+	private Set<Person> cast = new TreeSet<Person>();
 	private String description;
 	
 	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public Year getYear() {
+		return year;
+	}
+	public void setYear(Year year) {
+		this.year = year;
+	}
+	public Set<Genre> getGenre() {
+		return genre;
+	}
+	public void setGenre(Set<Genre> genre) {
+		this.genre = genre;
+	}
+	public Set<Person> getCast() {
+		return cast;
+	}
+	public void setCast(Set<Person> cast) {
+		this.cast = cast;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+public int compareTo(MediaItem o) {
+		int yearMatch = o.getYear().compareTo(this.getYear());  //this.getYear().compareTo(o.getYear());
+		if(yearMatch == 0)
+		return this.getTitle().compareTo(o.getTitle());
+		return yearMatch;
+	}
+
+	
+	
+
+	
+}
 
 /*	mediaItem(int Id, People person, String title, int year, TreeSet<Genre> genre, TreeSet<People> cast, String description){
 		this.Id = Id;
@@ -32,62 +75,21 @@ public abstract class MediaItem {
 	}
 	*/
 	
-	
-	/*public int getId() {
-		return Id;
-	}
 
-	public void setId(int id) {
-		Id = id;
-	}
-
-
-	public People getPerson() {
-		return person;
-	}
-
-
-	public void setPerson(People person) {
-		this.person = person;
-	}
-*/
-	
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
 	
 	
-	public ArrayList<Genre> getGenre() {
-		return genre;
-	}
 	
 	
-	public void setGenre(ArrayList<Genre> genre) {
-		this.genre = genre;
-	}
-	public ArrayList<Person> getCast() {
-		return cast;
-	}
-	public void setCast(ArrayList<Person> cast) {
-		this.cast = cast;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
+	
+	
+	
+	
+	
+	
+	
 
-}
+
+
 	/*public void TestTitle() {
 		System.out.println(getTitle() + " is the title of mediaItem");
 		

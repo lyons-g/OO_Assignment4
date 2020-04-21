@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "fid", scope = Film.class)
-public class Film extends MediaItem {
+public class Film extends MediaItem {// implements Comparable<Film> {
 
 	private int fid;
 	private Person director;
@@ -45,12 +45,22 @@ public class Film extends MediaItem {
 	public void setDirector(Person director) {
 		this.director = director;
 	}
-
+	
+	
+/*	public int compareTo(Film other) {
+		int yearMatch = this.getYear().compareTo(other.getYear());
+		if(yearMatch == 0)
+			return this.getTitle().compareTo(other.getTitle());
+		return yearMatch;
+	}
+*/
 	@Override
 	public String toString() {
 		return "\n" + "Film [fid=" + fid + ", director=" + director + "Title= " + getTitle() + ", Year= " + getYear() + ", Genre="
 				+ getGenre() + ", Cast= " + getCast() + ", Description= " + getDescription() + "]";
 	}
+
+
 	
 	
 	
