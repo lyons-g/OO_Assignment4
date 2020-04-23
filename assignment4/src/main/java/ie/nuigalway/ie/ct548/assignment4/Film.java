@@ -1,5 +1,6 @@
 package ie.nuigalway.ie.ct548.assignment4;
 
+import java.time.Year;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -8,25 +9,19 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "fid", scope = Film.class)
-public class Film extends MediaItem {// implements Comparable<Film> {
+public class Film extends MediaItem {
 
 	private int fid;
 	private Person director;
 	
-/*	public Film() {
-		
-		setTitle("Toy Story");
-		setYear(1995);
-		
-	}
-	*/
 	
-	public Film() {
+//	public Film() {
 		
-	}
+	//}
 
-	public Film(int fid) {
-		this.fid=fid;
+	public Film() {
+		System.out.println("Test_Film");
+		//this.fid=fid;
 		//director = getDirector();
 	}
 	
@@ -45,6 +40,11 @@ public class Film extends MediaItem {// implements Comparable<Film> {
 	public void setDirector(Person director) {
 		this.director = director;
 	}
+	
+	
+	
+	
+	
 	
 	
 /*	public int compareTo(Film other) {

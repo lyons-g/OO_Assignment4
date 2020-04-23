@@ -23,6 +23,7 @@ public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 	*/
 
 	public TvSeries() {
+		
 
 	}
 

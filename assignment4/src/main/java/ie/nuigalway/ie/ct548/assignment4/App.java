@@ -2,6 +2,8 @@ package ie.nuigalway.ie.ct548.assignment4;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Date;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -41,10 +43,52 @@ public class App
      
   //  for(Profile e : cc.getProfiles())
    // System.out.println(e.getName());
-    	
+   /*       	
+   MediaItemFactory mediaFactory = new MediaItemFactory();
+	
+	MediaItem theMedia = null;
+	
+//	mediaItem film = new film();
+ 
+ Scanner userInput = new Scanner(System.in);
+ System.out.println("What type of media item ? F or T ");
+ 
+ if(userInput.hasNextLine()) {
+	   
+	   String typeOfMedia = userInput.nextLine();
+	   
+	   theMedia = mediaFactory.createMediaItem(typeOfMedia);
+	  
+	   System.out.println("Please enter title");
+	 String inTitle = userInput.nextLine();
+	   theMedia.setTitle(inTitle);
+	   theMedia.setYear(Year.of(1996));
+	   theMedia.setDescription("Good");
+	   theMedia.setGenre(null);
+	   theMedia.setCast(null);
+	   cc.addMediaItem(theMedia);
+	   
+ System.out.println(cc.getMediaitems().toString());
+ if(theMedia != null) {
+	   doStuff(theMedia);
+	   
+ }else
+	   System.out.println("Enter F or T");
+ }
    
+ 
+   
+   
+   Film test = new Film();{
+	   Person person = new Person();
+	   person.setName("Tom");
+	   test.setDirector(person);
+	   System.out.println(test.getDirector().getName());
+	 
+   }*/
     
   // CatalogContainer model  = cc;
+   
     ProfileSelectionView view = new ProfileSelectionView(cc);
     CCController controller = new CCController(cc, view);
     //controller.updateView();
@@ -53,53 +97,24 @@ public class App
      ListByYearController controller = new ListByYearController(model, view);
      controller.updateView();
      */
-    }
+   
     
+    }
+
+      
+      
+      
+/*	
  
-}
-      
-      
-      
-      /*   
-      try {
-    	   cc = mapper.readValue(new File ("data.json"), CatalogContainer.class);
-    	   
-       } catch(JsonMappingException e) {
-    	   e.printStackTrace();
-       }
-       System.out.println(mapper.writeValueAsString(cc));
-    }
-}
+*/
     
-    
-    	MediaItemFactory mediaFactory = new MediaItemFactory();
-    	
-    	MediaItem theMedia = null;
-    	
-    //	mediaItem film = new film();
-       
-       Scanner userInput = new Scanner(System.in);
-       System.out.println("What type of media item ? F or T ");
-       
-       if(userInput.hasNextLine()) {
-    	   
-    	   String typeOfMedia = userInput.nextLine();
-    	   
-    	   theMedia = mediaFactory.createMediaItem(typeOfMedia);
-       
-       if(theMedia != null) {
-    	   doStuff(theMedia);
-    	   
-       }else
-    	   System.out.println("Enter F or T");
-       }
-      
-    }
+
     
     public static void doStuff(MediaItem aMediaItem) {
     	
     	aMediaItem.TestTitle();
     	aMediaItem.TestYear();
+    	
     }
+
 }
-*/

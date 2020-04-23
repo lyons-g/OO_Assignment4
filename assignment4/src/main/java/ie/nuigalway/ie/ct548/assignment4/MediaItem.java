@@ -20,6 +20,11 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	private String description;
 	
 	
+	public MediaItem()
+	{
+
+		
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -62,7 +67,7 @@ public int compareTo(MediaItem o) {
 	
 
 	
-}
+
 
 /*	mediaItem(int Id, People person, String title, int year, TreeSet<Genre> genre, TreeSet<People> cast, String description){
 		this.Id = Id;
@@ -90,7 +95,7 @@ public int compareTo(MediaItem o) {
 
 
 
-	/*public void TestTitle() {
+	public void TestTitle() {
 		System.out.println(getTitle() + " is the title of mediaItem");
 		
 	}
@@ -104,5 +109,5 @@ public int compareTo(MediaItem o) {
 		System.out.println(getYear() + " is the year of mediaItem");
 	
 }
-	}*/
-
+}
+	
