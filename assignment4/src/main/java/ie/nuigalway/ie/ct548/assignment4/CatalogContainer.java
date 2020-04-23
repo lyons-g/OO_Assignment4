@@ -15,14 +15,28 @@ public class CatalogContainer {
 	private Set<MediaItem> mediaitems = new TreeSet<MediaItem>();
 	private Set<TvSeries> tvseries = new TreeSet<TvSeries>();
 	private Set<Film> films = new TreeSet<Film>();
-	
+	//private String profileName;
 
 	public Set<Profile> getProfiles() {
 		return profiles;
 	}
+		
 	public void setProfiles(Set<Profile> profiles) {
 		this.profiles = profiles;
 	}
+	
+	
+	
+	
+	
+	public void ProfileName(String profileName) {
+		for(Profile e : profiles)
+			profileName = e.getName();
+		}
+
+	
+	
+	
 	public Set<Person> getPeople() {
 		return people;
 	}
@@ -64,4 +78,5 @@ public class CatalogContainer {
 		mediaitems.add(m);
 	}
 	
+
 }

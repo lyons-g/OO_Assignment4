@@ -1,6 +1,9 @@
 package ie.nuigalway.ie.ct548.assignment4;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+
 import javax.swing.GroupLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,103 +12,101 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class ProfileSelectionView{// extends JFrame {
+public class ProfileSelectionView extends JFrame {
 
-/*	private JTextField firstProfile = new JTextField(10);
-	private JTextField secondProfile = new JTextField(10);
+	private JFrame container;
+	private JButton firstProfile;
+	private JButton secondProfile;
+	private JButton thirdProfile;
+	private JButton fourthProfile;
+	private JPanel containerPanel;
+	private JPanel firstPanel;
 	
-	ProfileSelectionView(){
-		JPanel profilePanel = new JPanel();
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(600, 200);
+	ProfileSelectionView(CatalogContainer cc){
+		container = new JFrame();
+	
+		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		container.setSize(300, 200);
+		container.setVisible(true);
+		container.setLayout(new FlowLayout());
 		
-		profilePanel.add(firstProfile);
-		profilePanel.add(secondProfile);
-		this.add(profilePanel);
+		Profile firstProfileData = cc.getProfiles().iterator().next();
+		
+		firstProfile = new JButton(firstProfileData.getName());
+		secondProfile = new JButton("Second");
+		thirdProfile = new JButton("Third Profile");
+		fourthProfile = new JButton();
+		
+		containerPanel = new JPanel();
+		containerPanel.add(firstProfile);
+		containerPanel.add(secondProfile);
+		containerPanel.add(thirdProfile);
+		containerPanel.add(fourthProfile);
+		
+		container.add(containerPanel);
 	}
 	
-	public void setFirstProfile(String Name1) {
-		firstProfile.setText(Name1);
+
+
+	public void openFirstProfile(Profile profile) {
+		JLabel first = new JLabel(profile.getName());
+		containerPanel.setVisible(false);
+		firstPanel = new JPanel();
+		firstPanel.add(first);
+		container.add(firstPanel);
+	}
+		
+	void addFirstProfileListener(ActionListener listenForFirstProfileButton) {
+		firstProfile.addActionListener(listenForFirstProfileButton);
+	}
+	
+	
+		
+		public JButton getFirstProfile() {
+			return firstProfile;
+			
+		}
+		
+		public void setFirstProfile(JButton firstProfile) {
+			
+			
+			this.firstProfile = firstProfile;
+		}
+		
+		public JButton getSecondProfile() {
+			return secondProfile;
+			
+		}
+		
+		public void setSecondProfile(JButton secondProfile) {
+			this.secondProfile = secondProfile;
+		}
+		
+		
+		
+	/*	profilePanel.add(firstProfile);
+		profilePanel.add(secondProfile);
+		this.add(profilePanel);
+		*/
+	
+	
+	/*public void setFirstProfile(String Name1) {
+		firstProfile.setText();
+		
+	//	setText("Profile 1");
 	}
 	
 	public void setSecondProfile(String Name2) {
-		firstProfile.setText(Name2);
+		firstProfile.setText();
 	}
-}*/
+
+	*/
 	
-	
-	public void printProfile(String name) {
-		System.out.println(name);
+	public void printProfile(String profileName) {
+		System.out.println(profileName);
 	}
-	
+
 }
 
 
 
-	/*
-	// View uses Swing framework to display UI to user
-	 private JFrame frame;
-	 private JButton Profile1Button;
-	 private JButton Profile2Button;
-	 private JButton Profile3Button;
-	 private JButton Profile4Button;
-	 
-	 public ProfileSelectionView(String title) {
-		  frame = new JFrame(title);
-		  frame.getContentPane().setLayout(new BorderLayout());
-		  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		  frame.setSize(500, 120);
-		  frame.setLocationRelativeTo(null);
-		  frame.setVisible(true);
-		  
-		  
-		  Profile1Button = new JButton("Profile1");
-		  Profile2Button = new JButton("Profile2");
-		  Profile3Button = new JButton("Profile3");
-		  Profile4Button = new JButton("Profile4");
-	 }
-		  
-		  public JFrame getFrame() {
-			  return frame;
-		  }
-		  
-		  public void serFrame(JFrame frame) {
-			  this.frame = frame;
-		  }
-		  
-		  public JButton getProfile1Button() {
-			  return Profile1Button;
-		  }
-		  
-		  public void setProfile1Button(JButton Profile1Button) {
-			  this.Profile1Button = Profile1Button;
-		  }
-		  
-		  public JButton getProfile2Button() {
-			  return Profile2Button;
-		  }
-		  
-		  public void setProfile2Button(JButton Profile2Button) {
-			  this.Profile2Button = Profile2Button;
-		  }
-		  
-		  public JButton getProfile3Button() {
-			  return Profile3Button;
-		  }
-		  
-		  public void setProfile3Button(JButton Profile3Button) {
-			  this.Profile3Button = Profile3Button;
-		  }
-		  
-		  public JButton getProfile4Button() {
-			  return Profile4Button;
-		  }
-		  
-		  public void setProfile4Button(JButton Profile4Button) {
-			  this.Profile4Button = Profile4Button;
-		  }
-		  
-		  
-}
-	 
-	 */

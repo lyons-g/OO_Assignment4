@@ -39,15 +39,15 @@ public class App
     
    // System.out.println(cc.getMediaitems().toString());
      
-    for(Profile e : cc.getProfiles())
-    	System.out.println(e.getName());
+  //  for(Profile e : cc.getProfiles())
+   // System.out.println(e.getName());
     	
    
     
-   /* CatalogContainer model  = cc;
-    ProfileSelectionView view = new ProfileSelectionView();
-    CCController controller = new CCController(model, view);
-    controller.updateView();
+  // CatalogContainer model  = cc;
+    ProfileSelectionView view = new ProfileSelectionView(cc);
+    CCController controller = new CCController(cc, view);
+    //controller.updateView();
      
     /* ListByYearView view = new ListByYearView(); 
      ListByYearController controller = new ListByYearController(model, view);
