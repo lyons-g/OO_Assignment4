@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -19,7 +20,8 @@ public class CCController {
 	private ProfileSelectionView view;
 	private AddItemView itemView;
 	private String typeOfMedia;
-	//private ListByYearView view2;
+	private ListByYearView ByYearView;
+	
 
 
 
@@ -30,8 +32,8 @@ public class CCController {
 		this.view.addFirstProfileListener(new firstProfileListener());
 		this.view.secondProfilerListener(new secondProfileListener());
 		this.view.thirdProfileListener(new thirdProfileListener());
+		this.view.fourthProfileListener(new fourthProfileListener());
 		
-	//	this.itemView.saveButton(new saveButtonListener());
 
 	}
 
@@ -51,22 +53,42 @@ public class CCController {
 
 	class secondProfileListener implements ActionListener{
 
-		
+
 		public void actionPerformed(ActionEvent arg0) {
 			ListByYearView lb = new ListByYearView();
 			System.out.println("Test2");
 		}
-		
+
 	}
 
 	class thirdProfileListener implements ActionListener{	
 		public void actionPerformed(ActionEvent arg0) {
-			//AddItemView av = new AddItemView();
-			//av.saveButtonListener(new saveButtonListener());
-			//System.out.println("Test3");
-			openAddItemView();
+			System.out.println("Add Item Window open and Create New Media Called");
+			CreateMedia();
 		}
+
+	}
+	
+	class fourthProfileListener implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		System.out.println("4th button pressed");
+		ListByYear();
 			
+		}
+}
+
+	class checkBoxListener implements ItemListener{
+
+		@Override
+		public void itemStateChanged(ItemEvent e) {
+			// TODO Auto-generated method stub
+			if(e.getSource() == itemView.getCheckbox()) {
+				if(e.getStateChange() == 1);
+				
+			}
+		}
+		
 	}
 	
 	class saveButtonListener implements ActionListener{
@@ -74,81 +96,70 @@ public class CCController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("NewTest");
-			CreateMedia();
 			
-		}
 		
+			String title = itemView.getTitleText().getText();
+			System.out.println(title + "saveButton");
+			
+			String description = itemView.getDescriptionText().getText();
+			
+			String year = itemView.getYearText().getText();
+			int y = Integer.parseInt(year);
+			
+			
+			
+			//String cast = itemView.getCastText().getText();
+			//String [] elements = cast.split(",");
+			
+			if(itemView.getCheckbox().isSelected()) {
+				typeOfMedia = "T";
+			}else
+				typeOfMedia = "F";
+		
+			
+			MediaItemFactory mediaFactory = new MediaItemFactory();
+			MediaItem theMedia = null;
+			theMedia = mediaFactory.createMediaItem(typeOfMedia);
+
+			theMedia.setTitle(title);
+			theMedia.setYear(Year.of(y));
+			theMedia.setDescription(description);
+			theMedia.setGenre(null);
+			theMedia.setCast(null);
+			model.addMediaItem(theMedia);
+			
+			System.out.println(model.getMediaitems());
+
+		}
+
 	}
 	
+	
+
 	public void CreateMedia() {
-		System.out.println("Create new media");
-		MediaItemFactory mediaFactory = new MediaItemFactory();
-		MediaItem theMedia = null;
-		theMedia = mediaFactory.createMediaItem("F");
-	
-	}
-	
-	public void openAddItemView() {
 		
 		System.out.println("Open add item View"); 
-		AddItemView ad = new AddItemView();
-		ad.saveButtonListener(new saveButtonListener()); 
-		
-	}
-	
-	
-	class checkboxListener implements ItemListener{
+		itemView  = new AddItemView();
+		itemView.saveButtonListener(new saveButtonListener()); 
+		itemView.checkBoxListener(new checkBoxListener());
+		System.out.println("Create new media");
 
+	}
+
+
+	public void ListByYear() {
+		System.out.println("ListByYear() called");
+		//ByYearView = new ListByYearView();
+		 VideoCatalogView view1 = new VideoCatalogView();
 		
-		@Override
-		public void itemStateChanged(ItemEvent e) {
-			if(e.getStateChange() == ItemEvent.SELECTED) {
-				 typeOfMedia = "T";
-			}
-			else {
-				 typeOfMedia = "F";
 			
-			}	
-		}
+		
 	}
-	
-	
-	
-	public void switchProfile() {
-		//ProfileSelectionView psv = new ProfileSelectionView();
-
-		//	psv.getFirstProfile().setText(model.getProfiles())
-	}
-
-	public void intiController() {
-
-	}
-	/*public String getProfileName() {
-		for(Profile e : model.getProfiles())	
-	    return e.getName();
-
-
-
-		//return model.getName();
-	}*/
 
 	public void updateView() {
 		view.printProfile(model.getProfiles().toString());
 
 
-		//	view.printProfile(model.getProfiles().toString());
-
 	}
 }
 
-
-/*	public SortedSet<MediaItem> getMediaItems(){
-	return Collections.unmodifiableSortedSet(MediaItems);
-	}
-
-	public void updateView2() {
-		view2.ListByYear(model.getMediaitems().toString());
-	}
-
-}
- */

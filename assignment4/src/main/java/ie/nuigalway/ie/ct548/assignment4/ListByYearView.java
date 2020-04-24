@@ -14,25 +14,23 @@ public class ListByYearView extends JFrame {
 	private JButton test;
 	private JPanel cp;
 
+	public ListByYearView(){
 
-	ListByYearView(){
-		
 		byYear = new JFrame();
 		byYear.setSize(300, 300);
 		byYear.setVisible(true);
 		byYear.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-		
-		//CatalogContainer cc = new CatalogContainer();
+
 		cp = new JPanel();
-		test = new JButton("Test");
-		
-		cp.add(test);
-		byYear.add(cp);
-		
 		
 
+		cp.add(test);
+		byYear.add(cp);
+
+
+
 	}
-	
+
 
 }
 

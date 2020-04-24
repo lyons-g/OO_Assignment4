@@ -35,86 +35,17 @@ public class App
 	   e.printStackTrace();
    }
     	
-    //System.out.println(cc);
-    
-   // System.out.println(cc.getProfiles().toString());
-    
-   // System.out.println(cc.getMediaitems().toString());
-     
-  //  for(Profile e : cc.getProfiles())
-   // System.out.println(e.getName());
-   /*       	
-   MediaItemFactory mediaFactory = new MediaItemFactory();
-	
-	MediaItem theMedia = null;
-	
-//	mediaItem film = new film();
- 
- Scanner userInput = new Scanner(System.in);
- System.out.println("What type of media item ? F or T ");
- 
- if(userInput.hasNextLine()) {
-	   
-	   String typeOfMedia = userInput.nextLine();
-	   
-	   theMedia = mediaFactory.createMediaItem(typeOfMedia);
-	  
-	   System.out.println("Please enter title");
-	 String inTitle = userInput.nextLine();
-	   theMedia.setTitle(inTitle);
-	   theMedia.setYear(Year.of(1996));
-	   theMedia.setDescription("Good");
-	   theMedia.setGenre(null);
-	   theMedia.setCast(null);
-	   cc.addMediaItem(theMedia);
-	   
- System.out.println(cc.getMediaitems().toString());
- if(theMedia != null) {
-	   doStuff(theMedia);
-	   
- }else
-	   System.out.println("Enter F or T");
- }
-   
- 
-   
-   
-   Film test = new Film();{
-	   Person person = new Person();
-	   person.setName("Tom");
-	   test.setDirector(person);
-	   System.out.println(test.getDirector().getName());
-	 
-   }*/
-    
-  // CatalogContainer model  = cc;
+
    
     ProfileSelectionView view = new ProfileSelectionView(cc);
     CCController controller = new CCController(cc, view);
     //controller.updateView();
-     
-    /* ListByYearView view = new ListByYearView(); 
-     ListByYearController controller = new ListByYearController(model, view);
-     controller.updateView();
-     */
+    
+
    
     
     }
 
       
-      
-      
-/*	
- 
-*/
-    
-
-    
-    public static void doStuff(MediaItem aMediaItem) {
-    	
-    	aMediaItem.TestTitle();
-    	aMediaItem.TestYear();
-    	
     }
 
-}

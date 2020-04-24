@@ -26,16 +26,11 @@ public class CatalogContainer {
 	}
 	
 	
-	
-	
-	
 	public void ProfileName(String profileName) {
 		for(Profile e : profiles)
 			profileName = e.getName();
 		}
 
-	
-	
 	
 	public Set<Person> getPeople() {
 		return people;
@@ -77,6 +72,8 @@ public class CatalogContainer {
 	public void addMediaItem(MediaItem m) {
 		mediaitems.add(m);
 	}
+	
+	
 	
 
 }

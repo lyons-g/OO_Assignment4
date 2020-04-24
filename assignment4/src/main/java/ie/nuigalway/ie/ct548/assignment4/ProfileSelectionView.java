@@ -52,6 +52,8 @@ public class ProfileSelectionView extends JFrame {
 		containerPanel.setVisible(false);
 		firstPanel = new JPanel();
 		firstPanel.add(first);
+		JLabel content = new JLabel(profile.getPreferredGenre().toString());
+		firstPanel.add(content);
 		container.add(firstPanel);
 	}
 		
@@ -69,6 +71,9 @@ public class ProfileSelectionView extends JFrame {
 		thirdProfile.addActionListener(listenForThird);
 	}
 	
+	void fourthProfileListener(ActionListener listenForThird) {
+		fourthProfile.addActionListener(listenForThird);
+	}
 		
 		public JButton getFirstProfile() {
 			return firstProfile;
