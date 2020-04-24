@@ -21,21 +21,70 @@ public class CCController {
 	private AddItemView itemView;
 	private String typeOfMedia;
 	private ListByYearView ByYearView;
-	
+	private VideoCatalogView vcView;
 
 
 
-	public CCController(CatalogContainer model, ProfileSelectionView view ) {
+	public CCController(CatalogContainer model, VideoCatalogView vcView) { //ProfileSelectionView view ) {
 		this.model = model;
-		this.view = view;
+		this.vcView = vcView;
 
-		this.view.addFirstProfileListener(new firstProfileListener());
+		this.vcView.switchProfileListener(new switchProfileListener());
+		this.vcView.addNewListener(new addNewListener());
+		this.vcView.listByYearListener(new listByYearListener());
+		this.vcView.listByGenre(new listByGenre());
+		/*this.view.addFirstProfileListener(new firstProfileListener());
 		this.view.secondProfilerListener(new secondProfileListener());
 		this.view.thirdProfileListener(new thirdProfileListener());
 		this.view.fourthProfileListener(new fourthProfileListener());
-		
+		*/
 
 	}
+	
+	class switchProfileListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			//ProfileSelectionView ps = new ProfileSelectionView();
+			System.out.println("Test Profile Switch");
+		}
+		
+	}
+	
+	class addNewListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Add Item Window open and Create New Media Called");
+			CreateMedia();
+			
+		}
+		
+	}
+	
+	class listByYearListener implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+	//	ListByYearView lb = new ListByYearView();
+		System.out.println("test byYear button");
+		}
+		
+	}
+	
+	
+	class listByGenre implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			System.out.println("test byGenre button");
+		}
+		
+	}
+	
+	
+	
 
 	class firstProfileListener implements ActionListener{
 
@@ -60,6 +109,9 @@ public class CCController {
 		}
 
 	}
+	
+	
+	
 
 	class thirdProfileListener implements ActionListener{	
 		public void actionPerformed(ActionEvent arg0) {
@@ -150,10 +202,13 @@ public class CCController {
 	public void ListByYear() {
 		System.out.println("ListByYear() called");
 		//ByYearView = new ListByYearView();
-		 VideoCatalogView view1 = new VideoCatalogView();
-		
+		/* VideoCatalogView view1 = new VideoCatalogView();
+		view1.switchProfileListener(new switchProfileListener());
+		view1.addNewListener(new addNewListener());
+		view1.listByYearListener(new listByYearListener());
+		view1.listByGenre(new listByGenre());
 			
-		
+		*/
 	}
 
 	public void updateView() {

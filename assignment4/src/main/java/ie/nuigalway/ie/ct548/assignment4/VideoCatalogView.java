@@ -3,6 +3,7 @@ package ie.nuigalway.ie.ct548.assignment4;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -29,7 +30,7 @@ public class VideoCatalogView extends JFrame {
 	private JLabel year5;
 	private JLabel userName;
 	
-	public VideoCatalogView() {
+	public VideoCatalogView(CatalogContainer cc) {
 		JFrame frame = new JFrame("Video Catalog");
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frame.setSize(500, 300);
@@ -144,8 +145,25 @@ public class VideoCatalogView extends JFrame {
 		genrePanel.add(genre5c);
 		
 		frame.add(genrePanel);
-		
-	
 	}
 	
+		void switchProfileListener(ActionListener listenForSwitch) {
+			SwitchProfile.addActionListener(listenForSwitch);
+		}
+		
+		
+		void addNewListener(ActionListener listenForAddNew) {
+			AddNew.addActionListener(listenForAddNew);
+		}
+		
+		void listByYearListener(ActionListener listenForByYear) {
+		ListByYear.addActionListener(listenForByYear);
+	}
+
+		void listByGenre(ActionListener listenForByGenre) {
+			ListByGenre.addActionListener(listenForByGenre);
+		}
 }
+
+	
+
