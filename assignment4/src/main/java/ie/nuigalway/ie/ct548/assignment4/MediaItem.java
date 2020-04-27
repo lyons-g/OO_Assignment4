@@ -15,14 +15,13 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 
 	private String title;
 	private Year year;
-	private Set<Genre> genre = new TreeSet<Genre>(); 
+	private ArrayList<Genre> genre = new ArrayList<Genre>(); 
 	private ArrayList<Person> cast = new ArrayList<Person>();
 	private String description;
+	private Person director;
 
 
-	public MediaItem()
-	{
-
+	public MediaItem(){
 
 	}
 	public String getTitle() {
@@ -37,12 +36,18 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	public void setYear(Year year) {
 		this.year = year;
 	}
-	public Set<Genre> getGenre() {
+	
+	
+	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
-	public void setGenre(Set<Genre> genre) {
+	
+	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
+	
+	
+	
 	public ArrayList<Person> getCast() {
 		return cast;
 	}
@@ -64,5 +69,14 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 			return this.getTitle().compareTo(o.getTitle());
 		return yearMatch;
 	}
+	
 
+	public Person getDirector() {
+		return director;
+	}
+	public void setDirector(Person director) {
+		this.director = director;
+	}
+
+	
 }

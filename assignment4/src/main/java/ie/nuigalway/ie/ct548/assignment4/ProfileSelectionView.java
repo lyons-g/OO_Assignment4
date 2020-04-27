@@ -2,6 +2,7 @@ package ie.nuigalway.ie.ct548.assignment4;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
 import javax.swing.GroupLayout;
@@ -14,25 +15,39 @@ import javax.swing.SwingConstants;
 
 public class ProfileSelectionView extends JFrame {
 
-	private JFrame container;
+	private JFrame frame;
 	private JButton firstProfile;
 	private JButton secondProfile;
 	private JButton thirdProfile;
 	private JButton fourthProfile;
-	private JPanel containerPanel;
-	private JPanel firstPanel;
+
 	
-	ProfileSelectionView(CatalogContainer cc){
-		container = new JFrame();
+	ProfileSelectionView(){
+		frame = new JFrame("Profile Selection");
 	
-		container.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		container.setSize(300, 200);
-		container.setVisible(true);
-		container.setLayout(new FlowLayout());
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(300, 200);
+		frame.setVisible(true);
+		frame.setLayout(new GridLayout());
 		
-		Profile firstProfileData = cc.getProfiles().iterator().next();
+		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(4,1));
 		
-		firstProfile = new JButton(firstProfileData.getName());
+		firstProfile = new JButton("First Profile");
+		panel.add(firstProfile);
+		secondProfile = new JButton("Second Profile");
+		panel.add(secondProfile);
+		thirdProfile = new JButton("Third Profile");
+		panel.add(thirdProfile);
+		fourthProfile = new JButton("Fourth Profile");
+		panel.add(fourthProfile);
+		
+		frame.add(panel);
+	}
+		//Profile firstProfileData = cc.getProfiles().get(0);
+				//.iterator().next();
+		
+		/*firstProfile = new JButton(firstProfileData.getName());
 		secondProfile = new JButton("Second");
 		thirdProfile = new JButton("Third Profile");
 		fourthProfile = new JButton();
@@ -43,7 +58,7 @@ public class ProfileSelectionView extends JFrame {
 		containerPanel.add(thirdProfile);
 		containerPanel.add(fourthProfile);
 		
-		container.add(containerPanel);
+		frame.add(containerPanel);
 	}
 	
 
@@ -54,9 +69,9 @@ public class ProfileSelectionView extends JFrame {
 		firstPanel.add(first);
 		JLabel content = new JLabel(profile.getPreferredGenre().toString());
 		firstPanel.add(content);
-		container.add(firstPanel);
+		frame.add(firstPanel);
 	}
-		
+		*/
 	void addFirstProfileListener(ActionListener listenForFirstProfileButton) {
 		firstProfile.addActionListener(listenForFirstProfileButton);
 	}
@@ -75,26 +90,7 @@ public class ProfileSelectionView extends JFrame {
 		fourthProfile.addActionListener(listenForThird);
 	}
 		
-		public JButton getFirstProfile() {
-			return firstProfile;
-			
-		}
-		
-		public void setFirstProfile(JButton firstProfile) {
-			
-			
-			this.firstProfile = firstProfile;
-		}
-		
-		public JButton getSecondProfile() {
-			return secondProfile;
-			
-		}
-		
-		public void setSecondProfile(JButton secondProfile) {
-			this.secondProfile = secondProfile;
-		}
-		
+
 		
 		
 	/*	profilePanel.add(firstProfile);
@@ -115,6 +111,38 @@ public class ProfileSelectionView extends JFrame {
 
 	*/
 	
+	public JButton getFirstProfile() {
+		return firstProfile;
+	}
+
+	public void setFirstProfile(JButton firstProfile) {
+		this.firstProfile = firstProfile;
+	}
+
+	public JButton getSecondProfile() {
+		return secondProfile;
+	}
+
+	public void setSecondProfile(JButton secondProfile) {
+		this.secondProfile = secondProfile;
+	}
+
+	public JButton getThirdProfile() {
+		return thirdProfile;
+	}
+
+	public void setThirdProfile(JButton thirdProfile) {
+		this.thirdProfile = thirdProfile;
+	}
+
+	public JButton getFourthProfile() {
+		return fourthProfile;
+	}
+
+	public void setFourthProfile(JButton fourthProfile) {
+		this.fourthProfile = fourthProfile;
+	}
+
 	public void printProfile(String profileName) {
 		System.out.println(profileName);
 	}

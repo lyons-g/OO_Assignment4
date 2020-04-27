@@ -21,6 +21,5 @@ public class FileUtilTest extends TestCase {
 		ObjectMapper mapper = new ObjectMapper();
 		System.out.println(mapper.writeValueAsString(catalog));
 	}
-	
 
 }

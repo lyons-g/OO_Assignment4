@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 
 	private int tid;
-	private Person creator;
+
 	
 	/*private String title;
 	private int year;
@@ -30,21 +30,15 @@ public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 	public TvSeries(int tid)//, Person creator, String title, int year, ArrayList<Genre> genre, ArrayList<Person> cast, String description) {
 	{
 		this.tid = tid;
-	/*	this.creator = creator;
-		this.title = title;
-		this.year = year;
-		this.genre = genre;
-		this.cast = cast;
-		this.description = description;
-*/
+
 	}
 
 	public Person getCreator() {
-		return creator;
+		return getDirector();
 	}
 
 	public void setCreator(Person creator) {
-		this.creator = creator;
+		setDirector(creator);
 	}
 
 	public int getTID() {
@@ -64,7 +58,7 @@ public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 */
 	@Override
 	public String toString() {
-		return "\n" + "TvSeries [tid=" + tid + ", creator=" + getCreator() + ", title= " + getTitle() + ", year= " + getYear() + ", genre= " + getGenre() + "Cast= " + getCast() + "Description= " + getDescription();
+		return "\n" + "TvSeries [tid=" + tid + ", creator=" + getDirector() + ", title= " + getTitle() + ", year= " + getYear() + ", genre= " + getGenre() + "Cast= " + getCast() + "Description= " + getDescription();
 	}
 
 

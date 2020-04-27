@@ -12,17 +12,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class Film extends MediaItem {
 
 	private int fid;
-	private Person director;
 	
 	
-//	public Film() {
-		
-	//}
+	
 
 	public Film() {
-		System.out.println("Test_Film");
-		//this.fid=fid;
-		//director = getDirector();
+		//System.out.println("Test_Film");
 	}
 	
 	public int getFid() {
@@ -33,30 +28,13 @@ public class Film extends MediaItem {
 		this.fid = fid;
 	}
 
-	public Person getDirector() {
-		return director;
-	}
+	
 
-	public void setDirector(Person director) {
-		this.director = director;
-	}
 	
 	
-	
-	
-	
-	
-	
-/*	public int compareTo(Film other) {
-		int yearMatch = this.getYear().compareTo(other.getYear());
-		if(yearMatch == 0)
-			return this.getTitle().compareTo(other.getTitle());
-		return yearMatch;
-	}
-*/
 	@Override
 	public String toString() {
-		return "\n" + "Film [fid=" + fid + ", director=" + director + "Title= " + getTitle() + ", Year= " + getYear() + ", Genre="
+		return "\n" + "Film [fid=" + fid + ", director=" + getDirector().getName() + "Title= " + getTitle() + ", Year= " + getYear() + ", Genre="
 				+ getGenre() + ", Cast= " + getCast() + ", Description= " + getDescription() + "]";
 	}
 

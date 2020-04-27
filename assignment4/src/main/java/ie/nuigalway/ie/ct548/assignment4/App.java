@@ -37,7 +37,7 @@ public class App
     	
 
    
-   // ProfileSelectionView view = new ProfileSelectionView(cc);
+
    VideoCatalogView view = new VideoCatalogView(cc); 
    CCController controller = new CCController(cc, view);
     //controller.updateView();

@@ -98,9 +98,6 @@ public class AddItemView {
 	
 	}
 	
-//	public String getTitle() {
-	//	return titleText.getText();
-	//}
 		
 	void checkBoxListener(ItemListener listenForCheckBox) {
 		checkbox.addItemListener(listenForCheckBox);

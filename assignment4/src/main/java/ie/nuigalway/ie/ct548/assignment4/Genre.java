@@ -18,6 +18,10 @@ public class Genre {
 		this.gid = gid;
 		
 	}
+	public Genre (String genre){
+		this.genre = genre;
+		
+	}
 	
 
 	public int getGid() {
@@ -38,7 +42,8 @@ public class Genre {
 
 	@Override
 	public String toString() {
-		return  "[gid=" + getGid() + ", genre=" +  getGenre() + "]";
+		return // "[gid=" + getGid() + ", genre=" +  getGenre() + "]";
+				getGenre() + " | ";
 	}
 
 
