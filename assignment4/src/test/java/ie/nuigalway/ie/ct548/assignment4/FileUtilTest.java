@@ -7,6 +7,8 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import Util.FileUtil;
+import ie.nuigalway.ie.ct548.assignment4.model.CatalogContainer;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 

@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 public class MediaItemFactory {
 
@@ -17,17 +17,17 @@ public class MediaItemFactory {
 		else return null;
 	}
 	
-	public MediaItem setDirectorOrCreator(MediaItem theMedia, String type) {
+	public MediaItem setDirectorOrCreator(MediaItem theMedia, String type, String name) {
 		
 		if(type.contentEquals("F")) {
 			
 		Film film = (Film) theMedia;
-		film.setDirector(new Person());
+		film.setDirector(new Person(name));
 		return film;
 		}
 		else {
 			TvSeries tvSeries = (TvSeries) theMedia;
-			tvSeries.setCreator(new Person());
+			tvSeries.setCreator(new Person(name));
 			return tvSeries;
 		}
 	}

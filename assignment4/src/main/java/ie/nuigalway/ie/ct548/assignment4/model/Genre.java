@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;

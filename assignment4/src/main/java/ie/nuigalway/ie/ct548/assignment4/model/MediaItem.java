@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 import java.awt.List;
 import java.time.Year;
@@ -24,6 +24,7 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	public MediaItem(){
 
 	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -64,7 +65,7 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	}
 
 	public int compareTo(MediaItem o) {
-		int yearMatch = o.getYear().compareTo(this.getYear());  //this.getYear().compareTo(o.getYear());
+		int yearMatch = this.getYear().compareTo(o.getYear()); 
 		if(yearMatch == 0)
 			return this.getTitle().compareTo(o.getTitle());
 		return yearMatch;

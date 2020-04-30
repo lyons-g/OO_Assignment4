@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 public class Profile {
 	

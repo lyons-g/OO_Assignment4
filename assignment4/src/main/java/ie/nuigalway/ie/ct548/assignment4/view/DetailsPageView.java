@@ -1,21 +1,18 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.view;
 
-import java.awt.Checkbox;
 import java.awt.GridLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
 
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class AddItemView {
+public class DetailsPageView {
+
+	
 
 	private JFrame frame;
 	private JCheckBox checkbox;
@@ -27,7 +24,7 @@ public class AddItemView {
 	private JTextField directorText;
 	private JTextField castText;
 
-	public AddItemView() {
+	public DetailsPageView() {
 		JFrame frame = new JFrame("Add Item");
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frame.setSize(350, 350);
@@ -41,7 +38,7 @@ public class AddItemView {
 		p.add(title);
 
 		titleText = new JTextField();
-		titleText.setEditable(true);
+		titleText.setEditable(false);
 		p.add(titleText);
 
 
@@ -50,14 +47,14 @@ public class AddItemView {
 
 		descriptionText = new JTextField();
 		descriptionText.setText(" ");
-		descriptionText.setEditable(true);
+		descriptionText.setEditable(false);
 		p.add(descriptionText);
 
 		JLabel Year = new JLabel("Year");
 		p.add(Year);
 
 		yearText = new JTextField();
-		yearText.setEditable(true);
+		yearText.setEditable(false);
 		p.add(yearText);
 
 		
@@ -65,7 +62,7 @@ public class AddItemView {
 		p.add(Genre);
 
 		genreText = new JTextField();
-		genreText.setEditable(true);
+		genreText.setEditable(false);
 		p.add(genreText);
 
 		frame.add(p);
@@ -74,14 +71,14 @@ public class AddItemView {
 		p.add(Director);
 
 		directorText = new JTextField();
-		directorText.setEditable(true);
+		directorText.setEditable(false);
 		p.add(directorText);
 		
 		JLabel Cast = new JLabel("Cast");
 		p.add(Cast);
 
 		castText = new JTextField();
-		castText.setEditable(true);
+		castText.setEditable(false);
 		p.add(castText);
 		
 		checkbox = new JCheckBox("Tv Series");
@@ -91,87 +88,78 @@ public class AddItemView {
 		Save = new JButton("Save");
 		p.add(Save);
 	}
+
 	
 	
-	void saveButtonListener(ActionListener listenForSave) {
-		Save.addActionListener(listenForSave);
-	
-	}
-	
-		
-	void checkBoxListener(ItemListener listenForCheckBox) {
-		checkbox.addItemListener(listenForCheckBox);
-	}
-	
-	public JTextField getTitleText() {
-		return titleText;
+	public JFrame getFrame() {
+		return frame;
 	}
 
-
-	public void setTitleText(JTextField titleText) {
-		this.titleText = titleText;
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
 	}
-
 
 	public JCheckBox getCheckbox() {
 		return checkbox;
 	}
 
-
 	public void setCheckbox(JCheckBox checkbox) {
 		this.checkbox = checkbox;
 	}
 
+	public JButton getSave() {
+		return Save;
+	}
+
+	public void setSave(JButton save) {
+		Save = save;
+	}
+
+	public JTextField getTitleText() {
+		return titleText;
+	}
+
+	public void setTitleText(JTextField titleText) {
+		this.titleText = titleText;
+	}
 
 	public JTextField getDescriptionText() {
 		return descriptionText;
 	}
 
-
 	public void setDescriptionText(JTextField descriptionText) {
 		this.descriptionText = descriptionText;
 	}
-
 
 	public JTextField getYearText() {
 		return yearText;
 	}
 
-
 	public void setYearText(JTextField yearText) {
 		this.yearText = yearText;
 	}
-
 
 	public JTextField getGenreText() {
 		return genreText;
 	}
 
-
 	public void setGenreText(JTextField genreText) {
 		this.genreText = genreText;
 	}
-
 
 	public JTextField getDirectorText() {
 		return directorText;
 	}
 
-
 	public void setDirectorText(JTextField directorText) {
 		this.directorText = directorText;
 	}
-
 
 	public JTextField getCastText() {
 		return castText;
 	}
 
-
 	public void setCastText(JTextField castText) {
 		this.castText = castText;
 	}
-	
-	
-	
 }

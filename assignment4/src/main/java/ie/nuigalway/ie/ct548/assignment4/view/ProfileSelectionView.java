@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.view;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -22,7 +22,7 @@ public class ProfileSelectionView extends JFrame {
 	private JButton fourthProfile;
 
 	
-	ProfileSelectionView(){
+	public ProfileSelectionView(){
 		frame = new JFrame("Profile Selection");
 	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -72,21 +72,21 @@ public class ProfileSelectionView extends JFrame {
 		frame.add(firstPanel);
 	}
 		*/
-	void addFirstProfileListener(ActionListener listenForFirstProfileButton) {
+	public void addFirstProfileListener(ActionListener listenForFirstProfileButton) {
 		firstProfile.addActionListener(listenForFirstProfileButton);
 	}
 	
 	
-	void secondProfilerListener(ActionListener listenForSecond) {
+	public void secondProfilerListener(ActionListener listenForSecond) {
 		secondProfile.addActionListener(listenForSecond);
 	}
 	
 	
-	void thirdProfileListener(ActionListener listenForThird) {
+	public void thirdProfileListener(ActionListener listenForThird) {
 		thirdProfile.addActionListener(listenForThird);
 	}
 	
-	void fourthProfileListener(ActionListener listenForThird) {
+	public void fourthProfileListener(ActionListener listenForThird) {
 		fourthProfile.addActionListener(listenForThird);
 	}
 		

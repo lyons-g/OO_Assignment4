@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.application;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +11,10 @@ import java.util.Scanner;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import ie.nuigalway.ie.ct548.assignment4.controller.CCController;
+import ie.nuigalway.ie.ct548.assignment4.model.CatalogContainer;
+import ie.nuigalway.ie.ct548.assignment4.view.VideoCatalogView;
 
 /**
  * Hello world!
@@ -43,7 +47,7 @@ public class App
     //controller.updateView();
     
 
-   
+   System.out.println(cc.toString());
     
     }
 

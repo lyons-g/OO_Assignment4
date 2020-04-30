@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 
 
@@ -13,21 +13,15 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 
 	private int tid;
+	private ArrayList tvSeries;
 
-	
-	/*private String title;
-	private int year;
-	private ArrayList<Genre> genre = new ArrayList<Genre>(); 
-	private ArrayList<Person> cast = new ArrayList<Person>();
-	private String description;
-	*/
 
 	public TvSeries() {
-		
+
 
 	}
 
-	public TvSeries(int tid)//, Person creator, String title, int year, ArrayList<Genre> genre, ArrayList<Person> cast, String description) {
+	public TvSeries(int tid)
 	{
 		this.tid = tid;
 
@@ -49,13 +43,7 @@ public class TvSeries extends MediaItem { //implements Comparable<TvSeries>{
 		tid = tID;
 	}
 
-	/*public int compareTo(TvSeries other) {
-		int yearMatch = this.getYear().compareTo(other.getYear());
-		if(yearMatch == 0)
-			return this.getTitle().compareTo(other.getTitle());
-		return yearMatch;
-	}
-*/
+
 	@Override
 	public String toString() {
 		return "\n" + "TvSeries [tid=" + tid + ", creator=" + getDirector() + ", title= " + getTitle() + ", year= " + getYear() + ", genre= " + getGenre() + "Cast= " + getCast() + "Description= " + getDescription();

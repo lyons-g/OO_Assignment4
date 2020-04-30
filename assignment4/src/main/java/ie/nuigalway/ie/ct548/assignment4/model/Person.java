@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
@@ -19,11 +19,13 @@ public class Person {
 		
 	}
 
+	public Person(String person) {
+		this.name = person;
+	}
 
 	public int getPid() {
 		return pid;
 	}
-
 
 	public void setPid(int pid) {
 		this.pid = pid;
@@ -41,7 +43,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "[pid=" + getPid() + ", name=" + getName() + "]";
+		return getName();
 	}
 	
 	

@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4;
+package ie.nuigalway.ie.ct548.assignment4.model;
 
 import java.time.Year;
 import java.util.Set;
@@ -13,11 +13,8 @@ public class Film extends MediaItem {
 
 	private int fid;
 	
-	
-	
-
 	public Film() {
-		//System.out.println("Test_Film");
+		
 	}
 	
 	public int getFid() {
@@ -28,19 +25,11 @@ public class Film extends MediaItem {
 		this.fid = fid;
 	}
 
-	
-
-	
-	
 	@Override
 	public String toString() {
-		return "\n" + "Film [fid=" + fid + ", director=" + getDirector().getName() + "Title= " + getTitle() + ", Year= " + getYear() + ", Genre="
+		return "\n" + "Film [fid=" + fid + ", director=" + getDirector() + "Title= " + getTitle() + ", Year= " + getYear() + ", Genre="
 				+ getGenre() + ", Cast= " + getCast() + ", Description= " + getDescription() + "]";
 	}
 
-
-	
-	
-	
 }
 
