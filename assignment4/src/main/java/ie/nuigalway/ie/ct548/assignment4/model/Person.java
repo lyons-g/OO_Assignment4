@@ -8,15 +8,15 @@ public class Person {
 
 	private int pid;
 	private String name; 
-	
+
 	public Person() {
-		
+
 	}
-	
+
 	public Person(int pid) {
 		this.pid = pid;
 		this.name = getName();
-		
+
 	}
 
 	public Person(String person) {
@@ -45,6 +45,6 @@ public class Person {
 	public String toString() {
 		return getName();
 	}
-	
-	
+
+
 }

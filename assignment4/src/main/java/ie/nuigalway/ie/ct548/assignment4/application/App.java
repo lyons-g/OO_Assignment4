@@ -17,40 +17,40 @@ import ie.nuigalway.ie.ct548.assignment4.model.CatalogContainer;
 import ie.nuigalway.ie.ct548.assignment4.view.VideoCatalogView;
 
 /**
- * Hello world!
+ * this is the main driver app, it loads the JSON data from file and using mapper we map the json to classes
  *
  */
 public class App 
 {	
-    public static void main( String[] args ) throws JsonParseException, IOException
-    {  	
-    	    	
-   CatalogContainer cc = new CatalogContainer();
-   ObjectMapper mapper = new ObjectMapper();
-   
-   try { cc = mapper.readValue(new File ("data.json"), CatalogContainer.class);
-   
-   }
-   catch(JsonParseException e) {
-	   e.printStackTrace();
-   }catch(JsonMappingException e) {
-	   e.printStackTrace();
-   }catch(Exception e) {
-	   e.printStackTrace();
-   }
-    	
+	public static void main( String[] args ) throws JsonParseException, IOException
+	{  	
 
-   
+		CatalogContainer cc = new CatalogContainer();
+		ObjectMapper mapper = new ObjectMapper();
 
-   VideoCatalogView view = new VideoCatalogView(cc); 
-   CCController controller = new CCController(cc, view);
-    //controller.updateView();
-    
+		try { cc = mapper.readValue(new File ("data.json"), CatalogContainer.class);
 
-   System.out.println(cc.toString());
-    
-    }
+		}
+		catch(JsonParseException e) {
+			e.printStackTrace();
+		}catch(JsonMappingException e) {
+			e.printStackTrace();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 
-      
-    }
+
+
+
+		VideoCatalogView view = new VideoCatalogView(cc); 
+		CCController controller = new CCController(cc, view);
+		//controller.updateView();
+
+
+		System.out.println(cc.toString());
+
+	}
+
+
+}
 

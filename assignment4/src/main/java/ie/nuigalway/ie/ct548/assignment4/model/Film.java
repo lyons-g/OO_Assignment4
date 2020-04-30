@@ -12,11 +12,11 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class Film extends MediaItem {
 
 	private int fid;
-	
+
 	public Film() {
-		
+
 	}
-	
+
 	public int getFid() {
 		return fid;
 	}

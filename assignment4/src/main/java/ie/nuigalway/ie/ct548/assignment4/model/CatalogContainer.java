@@ -9,6 +9,11 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+
+/*
+ * Container for all of the json objects
+ */
+
 public class CatalogContainer {
 
 	private ArrayList<Profile> profiles = new ArrayList<Profile>();

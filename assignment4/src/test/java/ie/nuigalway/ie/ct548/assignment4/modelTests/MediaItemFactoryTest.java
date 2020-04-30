@@ -1,8 +1,13 @@
-package ie.nuigalway.ie.ct548.assignment4.model;
+package ie.nuigalway.ie.ct548.assignment4.modelTests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ie.nuigalway.ie.ct548.assignment4.model.Film;
+import ie.nuigalway.ie.ct548.assignment4.model.MediaItem;
+import ie.nuigalway.ie.ct548.assignment4.model.MediaItemFactory;
+import ie.nuigalway.ie.ct548.assignment4.model.TvSeries;
 
 public class MediaItemFactoryTest {
 

@@ -60,7 +60,7 @@ public class AddItemView {
 		yearText.setEditable(true);
 		p.add(yearText);
 
-		
+
 		JLabel Genre = new JLabel("Genre");
 		p.add(Genre);
 
@@ -76,33 +76,35 @@ public class AddItemView {
 		directorText = new JTextField();
 		directorText.setEditable(true);
 		p.add(directorText);
-		
+
 		JLabel Cast = new JLabel("Cast");
 		p.add(Cast);
 
 		castText = new JTextField();
 		castText.setEditable(true);
 		p.add(castText);
-		
+
 		checkbox = new JCheckBox("Tv Series");
 		checkbox.setSelected(false);
 		p.add(checkbox);
-		
+
 		Save = new JButton("Save");
 		p.add(Save);
 	}
-	
-	
+
+/*
+ * ActionListener added to various components on the view! invoking results in controller action
+ */
 	public void saveButtonListener(ActionListener listenForSave) {
 		Save.addActionListener(listenForSave);
-	
+
 	}
-	
-		
+
+
 	public void checkBoxListener(ItemListener listenForCheckBox) {
 		checkbox.addItemListener(listenForCheckBox);
 	}
-	
+
 	public JTextField getTitleText() {
 		return titleText;
 	}
@@ -171,7 +173,7 @@ public class AddItemView {
 	public void setCastText(JTextField castText) {
 		this.castText = castText;
 	}
-	
-	
-	
+
+
+
 }

@@ -33,7 +33,7 @@ public class VideoCatalogView extends JFrame {
 		frame.setSize(800, 300);
 		frame.setVisible(true);
 		frame.setLayout(new BorderLayout());
-		
+
 
 		JPanel btnPanel = new JPanel();
 		btnPanel.setLayout(new GridLayout(4,1));
@@ -118,7 +118,7 @@ public class VideoCatalogView extends JFrame {
 	public void setUserName(JLabel userName) {
 		this.userName = userName;
 	}
-	
+
 	public JFrame getFrame() {
 		return frame;
 	}

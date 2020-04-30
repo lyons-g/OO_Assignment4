@@ -1,4 +1,4 @@
-package ie.nuigalway.ie.ct548.assignment4.model;
+package ie.nuigalway.ie.ct548.assignment4.modelTests;
 
 import static org.junit.Assert.*;
 
@@ -11,6 +11,11 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import ie.nuigalway.ie.ct548.assignment4.model.CatalogContainer;
+import ie.nuigalway.ie.ct548.assignment4.model.Film;
+import ie.nuigalway.ie.ct548.assignment4.model.MediaItem;
+import ie.nuigalway.ie.ct548.assignment4.model.Person;
 
 public class FilmTest {
 

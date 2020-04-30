@@ -6,23 +6,23 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "gid", scope = Genre.class)
 public class Genre {
 
-	
+
 	private int gid;
 	private String genre;
-	
+
 	public Genre() {
-		
+
 	}
-	
+
 	public Genre (int gid){
 		this.gid = gid;
-		
+
 	}
 	public Genre (String genre){
 		this.genre = genre;
-		
+
 	}
-	
+
 
 	public int getGid() {
 		return gid;
@@ -47,7 +47,7 @@ public class Genre {
 	}
 
 
-		
-	
-	
+
+
+
 }

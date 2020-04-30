@@ -39,7 +39,10 @@ import ie.nuigalway.ie.ct548.assignment4.model.Person;
 import ie.nuigalway.ie.ct548.assignment4.model.Profile;
 import ie.nuigalway.ie.ct548.assignment4.view.*;
 
-
+/*
+ * Controller Class that handles interaction with model and manipulation of data 
+ * Call for the creation of new views and supplies that for the views population 
+ */
 
 public class CCController {
 
@@ -52,6 +55,7 @@ public class CCController {
 	private ListByGenreView ByGenreView;
 	private DetailsPageView detailsPage;
 
+	//Controller constructor
 	public CCController(CatalogContainer model, VideoCatalogView vcView) {
 		this.model = model;
 		this.vcView = vcView;
@@ -61,7 +65,12 @@ public class CCController {
 		this.vcView.listByYearListener(new listByYearListener());
 		this.vcView.listByGenre(new listByGenre());
 	}
-
+	
+	
+	
+/*
+ * Action Listener and Link Listeners methods, which call different functions based on what button was clicked in the view 
+ */
 	class switchProfileListener implements ActionListener {
 
 		@Override
@@ -103,9 +112,8 @@ public class CCController {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			// super.mouseClicked(e);
 			System.out.println("Clicked");
-			//MediaItem find = null;
+			
 			
 			String Title = e.getComponent().getName();
 			for(MediaItem m : model.getMediaitems()) {
@@ -120,51 +128,7 @@ public class CCController {
 		}
 
 	}
-
-	void detailsPage(MediaItem item) {
-		System.out.println("DetailsPage( ) called");
-		System.out.println(item.getTitle());
-
-		detailsPage = new DetailsPageView();
-		detailsPage.getTitleText().setText(item.getTitle());
-		detailsPage.getDescriptionText().setText(item.getDescription());
-		detailsPage.getYearText().setText(item.getYear().toString());
-		detailsPage.getGenreText().setText(item.getGenre().toString());
-		detailsPage.getDescriptionText().setText(item.getDirector().toString());
-		detailsPage.getCastText().setText(item.getCast().toString());
-
-	}
-
-	public void ListByYear() {
-		System.out.println("ListByYear() called");
-
-		TreeMap<Year, MediaItem> maping = model.sortby();
-		for (MediaItem m : maping.values()) {
-			System.out.println(m.getYear());
-			System.out.println(m.getTitle());
-		}
-
-		ByYearView = new ListByYearView();
-
-		TreeMap<Year, MediaItem> map = model.sortby();
-		for (MediaItem m : map.values()) {
-
-			JLabel l = new JLabel(m.getYear().toString());
-			JLabel title = new JLabel(m.getTitle());
-			title.setName(m.getTitle());
-			title.setForeground(Color.blue);
-			title.addMouseListener(new LinkListener());
-
-			ByYearView.getTitlePanel().add(l);
-			ByYearView.getTitlePanel().add(title);
-
-			JLabel blank = new JLabel(" ");
-			JLabel genreLabel = new JLabel(m.getGenre().toString());
-			ByYearView.getGenrePanel().add(blank);
-			ByYearView.getGenrePanel().add(genreLabel);
-		}
-	}
-
+	
 	class listByGenre implements ActionListener {
 
 		@Override
@@ -174,37 +138,8 @@ public class CCController {
 		}
 
 	}
-
-	public void listByGenre() {
-
-		ByGenreView = new ListByGenreView();
-		
-
-		HashMap<String, ArrayList<MediaItem>> sbg = model.sortByG();
-		for (Entry<String, ArrayList<MediaItem>> m : sbg.entrySet()) {
-			System.out.println(m.getKey());
-			String key = m.getKey();
-			JLabel keyLabel = new JLabel(key, SwingConstants.CENTER);
-			ByGenreView.getGenrePanel().add(keyLabel);
-			JLabel blank = new JLabel(" ");
-			ByGenreView.getGenrePanel().add(blank);
-
-			for (MediaItem item : m.getValue()) {
-
-				String title = item.getTitle();
-				JLabel titleLabel = new JLabel(title, SwingConstants.CENTER);
-				titleLabel.setForeground(Color.blue);
-				ByGenreView.getGenrePanel().add(titleLabel);
-				String year = item.getYear().toString();
-				JLabel yearLabel = new JLabel(year);
-				ByGenreView.getGenrePanel().add(yearLabel);
-				System.out.println(item.getTitle());
-
-			}
-
-		}
-
-	}
+	
+	
 
 	class firstProfileListener implements ActionListener {
 
@@ -222,27 +157,7 @@ public class CCController {
 
 	}
 
-	public void switchUser(Profile profile) {
-		VideoCatalogView view = new VideoCatalogView(model);
-		view.getUserName().setText(profile.getName());
-		Genre preferred = profile.getPreferredGenre();
-		System.out.println(preferred);
-
-		for (MediaItem m : model.getMediaitems()) {
-			if (m.getGenre().contains(preferred)) {
-				System.out.println(m.getTitle() + m.getGenre() + m.getYear());
-				JLabel title = new JLabel(m.getTitle());
-				JLabel year = new JLabel(m.getYear().toString());
-				JLabel genre = new JLabel(m.getGenre().toString());
-
-				view.getGenre().add(title);
-				view.getGenre().add(year);
-				view.getGenre().add(genre);
-			}
-		}
-
-	}
-
+	
 	class thirdProfileListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -264,16 +179,19 @@ public class CCController {
 
 		@Override
 		public void itemStateChanged(ItemEvent e) {
-			// TODO Auto-generated method stub
 			if (e.getSource() == itemView.getCheckbox()) {
-				if (e.getStateChange() == 1)
-					;
+				if (e.getStateChange() == 1);
 
 			}
 		}
 
 	}
-
+	
+	/*
+	 * This is a crucial section of the project
+	 * when the save button is clicked a new mediaFactory is created
+	 * based on if the check box is clicked or not, a different type type of media is created
+	 */
 	class saveButtonListener implements ActionListener {
 
 		@Override
@@ -334,8 +252,111 @@ public class CCController {
 
 	}
 
-	public void updateView() {
-		view.printProfile(model.getProfiles().toString());
+	void detailsPage(MediaItem item) {
+		System.out.println("DetailsPage( ) called");
+		System.out.println(item.getTitle());
+
+		detailsPage = new DetailsPageView();
+		detailsPage.getTitleText().setText(item.getTitle());
+		detailsPage.getDescriptionText().setText(item.getDescription());
+		detailsPage.getYearText().setText(item.getYear().toString());
+		detailsPage.getGenreText().setText(item.getGenre().toString());
+		detailsPage.getDescriptionText().setText(item.getDirector().toString());
+		detailsPage.getCastText().setText(item.getCast().toString());
 
 	}
+
+	public void ListByYear() {
+		System.out.println("ListByYear() called");
+
+		TreeMap<Year, MediaItem> maping = model.sortby();
+		for (MediaItem m : maping.values()) {
+			System.out.println(m.getYear());
+			System.out.println(m.getTitle());
+		}
+
+		ByYearView = new ListByYearView();
+
+		TreeMap<Year, MediaItem> map = model.sortby();
+		for (MediaItem m : map.values()) {
+
+			JLabel l = new JLabel(m.getYear().toString());
+			JLabel title = new JLabel(m.getTitle());
+			title.setName(m.getTitle());
+			title.setForeground(Color.blue);
+			title.addMouseListener(new LinkListener());
+
+			ByYearView.getTitlePanel().add(l);
+			ByYearView.getTitlePanel().add(title);
+
+			JLabel blank = new JLabel(" ");
+			JLabel genreLabel = new JLabel(m.getGenre().toString());
+			ByYearView.getGenrePanel().add(blank);
+			ByYearView.getGenrePanel().add(genreLabel);
+		}
+	}
+
+
+
+	public void listByGenre() {
+
+		ByGenreView = new ListByGenreView();
+		
+
+		HashMap<String, ArrayList<MediaItem>> sbg = model.sortByG();
+		for (Entry<String, ArrayList<MediaItem>> m : sbg.entrySet()) {
+			System.out.println(m.getKey());
+			String key = m.getKey();
+			JLabel keyLabel = new JLabel(key, SwingConstants.CENTER);
+			ByGenreView.getGenrePanel().add(keyLabel);
+			JLabel blank = new JLabel(" ");
+			ByGenreView.getGenrePanel().add(blank);
+
+			for (MediaItem item : m.getValue()) {
+
+				String title = item.getTitle();
+				JLabel titleLabel = new JLabel(title, SwingConstants.CENTER);
+				titleLabel.setForeground(Color.blue);
+				titleLabel.setName(item.getTitle());
+				titleLabel.addMouseListener(new LinkListener());
+				ByGenreView.getGenrePanel().add(titleLabel);
+				String year = item.getYear().toString();
+				JLabel yearLabel = new JLabel(year);
+				ByGenreView.getGenrePanel().add(yearLabel);
+				System.out.println(item.getTitle());
+
+			}
+
+		}
+
+	}
+
+
+	public void switchUser(Profile profile) {
+		VideoCatalogView view = new VideoCatalogView(model);
+		view.getUserName().setText(profile.getName());
+		Genre preferred = profile.getPreferredGenre();
+		System.out.println(preferred);
+
+		for (MediaItem m : model.getMediaitems()) {
+			if (m.getGenre().contains(preferred)) {
+				System.out.println(m.getTitle() + m.getGenre() + m.getYear());
+				JLabel title = new JLabel(m.getTitle());
+				title.setName(m.getTitle());
+				title.setForeground(Color.blue);
+				title.addMouseListener(new LinkListener());
+				JLabel year = new JLabel(m.getYear().toString());
+				JLabel genre = new JLabel(m.getGenre().toString());
+
+				view.getGenre().add(title);
+				view.getGenre().add(year);
+				view.getGenre().add(genre);
+			}
+		}
+
+	}
+
+
+
+
 }

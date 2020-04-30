@@ -24,7 +24,7 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	public MediaItem(){
 
 	}
-	
+
 	public String getTitle() {
 		return title;
 	}
@@ -37,18 +37,18 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 	public void setYear(Year year) {
 		this.year = year;
 	}
-	
-	
+
+
 	public ArrayList<Genre> getGenre() {
 		return genre;
 	}
-	
+
 	public void setGenre(ArrayList<Genre> genre) {
 		this.genre = genre;
 	}
-	
-	
-	
+
+
+
 	public ArrayList<Person> getCast() {
 		return cast;
 	}
@@ -70,7 +70,7 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 			return this.getTitle().compareTo(o.getTitle());
 		return yearMatch;
 	}
-	
+
 
 	public Person getDirector() {
 		return director;
@@ -79,5 +79,5 @@ public abstract class MediaItem implements Comparable<MediaItem>{
 		this.director = director;
 	}
 
-	
+
 }
